@@ -1,5 +1,5 @@
 language: objective-c
-xcode_project: MISTDebug.xcodeproj
+xcode_workspace: MISTDebug.xcworkspace
 xcode_scheme: MISTDebug
 osx_image: xcode7.3
 xcode_sdk: iphonesimulator
