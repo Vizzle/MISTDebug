@@ -1,0 +1,415 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1E2C926B1E35F71E00AE04F1 /* MISTDebug.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E2C92691E35F71E00AE04F1 /* MISTDebug.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1E81A8601E35FBF10057A55D /* MSTDebugger.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E81A85E1E35FBF10057A55D /* MSTDebugger.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1E81A8611E35FBF10057A55D /* MSTDebugger.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E81A85F1E35FBF10057A55D /* MSTDebugger.m */; };
+		1EEE54B01E514EEB00585DF8 /* MSTDebugConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EEE54A41E514EEB00585DF8 /* MSTDebugConfig.h */; };
+		1EEE54B11E514EEB00585DF8 /* MSTDebugConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EEE54A51E514EEB00585DF8 /* MSTDebugConfig.m */; };
+		1EEE54B21E514EEB00585DF8 /* MSTDebugConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EEE54A61E514EEB00585DF8 /* MSTDebugConnection.h */; };
+		1EEE54B31E514EEB00585DF8 /* MSTDebugConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EEE54A71E514EEB00585DF8 /* MSTDebugConnection.m */; };
+		1EEE54B41E514EEB00585DF8 /* MSTDebugDefine.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EEE54A81E514EEB00585DF8 /* MSTDebugDefine.h */; };
+		1EEE54B51E514EEB00585DF8 /* MSTDebugDefine.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EEE54A91E514EEB00585DF8 /* MSTDebugDefine.m */; };
+		1EEE54B61E514EEB00585DF8 /* MSTDebugDownloader.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EEE54AA1E514EEB00585DF8 /* MSTDebugDownloader.h */; };
+		1EEE54B71E514EEB00585DF8 /* MSTDebugDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EEE54AB1E514EEB00585DF8 /* MSTDebugDownloader.m */; };
+		1EEE54B81E514EEB00585DF8 /* MSTDebugScanView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EEE54AC1E514EEB00585DF8 /* MSTDebugScanView.h */; };
+		1EEE54B91E514EEB00585DF8 /* MSTDebugScanView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EEE54AD1E514EEB00585DF8 /* MSTDebugScanView.m */; };
+		1EEE54BA1E514EEB00585DF8 /* MSTDebugSocketManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EEE54AE1E514EEB00585DF8 /* MSTDebugSocketManager.h */; };
+		1EEE54BB1E514EEB00585DF8 /* MSTDebugSocketManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EEE54AF1E514EEB00585DF8 /* MSTDebugSocketManager.m */; };
+		887392F50D7D907B1FC513B5 /* libPods-MISTDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D8A9E05BB7BD4DB00C677F38 /* libPods-MISTDebug.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0C8107CC08F516EF67E7FEFC /* Pods-MISTDebug.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MISTDebug.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MISTDebug/Pods-MISTDebug.debug.xcconfig"; sourceTree = "<group>"; };
+		1E2C92661E35F71E00AE04F1 /* MISTDebug.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MISTDebug.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1E2C92691E35F71E00AE04F1 /* MISTDebug.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MISTDebug.h; sourceTree = "<group>"; };
+		1E2C926A1E35F71E00AE04F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1E81A85E1E35FBF10057A55D /* MSTDebugger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSTDebugger.h; sourceTree = "<group>"; };
+		1E81A85F1E35FBF10057A55D /* MSTDebugger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSTDebugger.m; sourceTree = "<group>"; };
+		1EEE54A41E514EEB00585DF8 /* MSTDebugConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSTDebugConfig.h; sourceTree = "<group>"; };
+		1EEE54A51E514EEB00585DF8 /* MSTDebugConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSTDebugConfig.m; sourceTree = "<group>"; };
+		1EEE54A61E514EEB00585DF8 /* MSTDebugConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSTDebugConnection.h; sourceTree = "<group>"; };
+		1EEE54A71E514EEB00585DF8 /* MSTDebugConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSTDebugConnection.m; sourceTree = "<group>"; };
+		1EEE54A81E514EEB00585DF8 /* MSTDebugDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSTDebugDefine.h; sourceTree = "<group>"; };
+		1EEE54A91E514EEB00585DF8 /* MSTDebugDefine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSTDebugDefine.m; sourceTree = "<group>"; };
+		1EEE54AA1E514EEB00585DF8 /* MSTDebugDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSTDebugDownloader.h; sourceTree = "<group>"; };
+		1EEE54AB1E514EEB00585DF8 /* MSTDebugDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSTDebugDownloader.m; sourceTree = "<group>"; };
+		1EEE54AC1E514EEB00585DF8 /* MSTDebugScanView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSTDebugScanView.h; sourceTree = "<group>"; };
+		1EEE54AD1E514EEB00585DF8 /* MSTDebugScanView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSTDebugScanView.m; sourceTree = "<group>"; };
+		1EEE54AE1E514EEB00585DF8 /* MSTDebugSocketManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSTDebugSocketManager.h; sourceTree = "<group>"; };
+		1EEE54AF1E514EEB00585DF8 /* MSTDebugSocketManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSTDebugSocketManager.m; sourceTree = "<group>"; };
+		D8A9E05BB7BD4DB00C677F38 /* libPods-MISTDebug.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MISTDebug.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E63B504E7653E2167D4CCBC5 /* Pods-MISTDebug.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MISTDebug.release.xcconfig"; path = "Pods/Target Support Files/Pods-MISTDebug/Pods-MISTDebug.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1E2C92621E35F71E00AE04F1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				887392F50D7D907B1FC513B5 /* libPods-MISTDebug.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1E2C925C1E35F71E00AE04F1 = {
+			isa = PBXGroup;
+			children = (
+				1E2C92681E35F71E00AE04F1 /* MISTDebug */,
+				1E2C92671E35F71E00AE04F1 /* Products */,
+				DF2F66BD001928ED22B0F29A /* Pods */,
+				70AF68C5C8AD5051545E72F5 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		1E2C92671E35F71E00AE04F1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1E2C92661E35F71E00AE04F1 /* MISTDebug.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1E2C92681E35F71E00AE04F1 /* MISTDebug */ = {
+			isa = PBXGroup;
+			children = (
+				1EEE54A41E514EEB00585DF8 /* MSTDebugConfig.h */,
+				1EEE54A51E514EEB00585DF8 /* MSTDebugConfig.m */,
+				1EEE54A61E514EEB00585DF8 /* MSTDebugConnection.h */,
+				1EEE54A71E514EEB00585DF8 /* MSTDebugConnection.m */,
+				1EEE54A81E514EEB00585DF8 /* MSTDebugDefine.h */,
+				1EEE54A91E514EEB00585DF8 /* MSTDebugDefine.m */,
+				1EEE54AA1E514EEB00585DF8 /* MSTDebugDownloader.h */,
+				1EEE54AB1E514EEB00585DF8 /* MSTDebugDownloader.m */,
+				1EEE54AC1E514EEB00585DF8 /* MSTDebugScanView.h */,
+				1EEE54AD1E514EEB00585DF8 /* MSTDebugScanView.m */,
+				1EEE54AE1E514EEB00585DF8 /* MSTDebugSocketManager.h */,
+				1EEE54AF1E514EEB00585DF8 /* MSTDebugSocketManager.m */,
+				1E2C92691E35F71E00AE04F1 /* MISTDebug.h */,
+				1E2C926A1E35F71E00AE04F1 /* Info.plist */,
+				1E81A85E1E35FBF10057A55D /* MSTDebugger.h */,
+				1E81A85F1E35FBF10057A55D /* MSTDebugger.m */,
+			);
+			path = MISTDebug;
+			sourceTree = "<group>";
+		};
+		70AF68C5C8AD5051545E72F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D8A9E05BB7BD4DB00C677F38 /* libPods-MISTDebug.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DF2F66BD001928ED22B0F29A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0C8107CC08F516EF67E7FEFC /* Pods-MISTDebug.debug.xcconfig */,
+				E63B504E7653E2167D4CCBC5 /* Pods-MISTDebug.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		1E2C92631E35F71E00AE04F1 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1EEE54B61E514EEB00585DF8 /* MSTDebugDownloader.h in Headers */,
+				1EEE54B01E514EEB00585DF8 /* MSTDebugConfig.h in Headers */,
+				1EEE54B81E514EEB00585DF8 /* MSTDebugScanView.h in Headers */,
+				1EEE54B21E514EEB00585DF8 /* MSTDebugConnection.h in Headers */,
+				1EEE54BA1E514EEB00585DF8 /* MSTDebugSocketManager.h in Headers */,
+				1E81A8601E35FBF10057A55D /* MSTDebugger.h in Headers */,
+				1E2C926B1E35F71E00AE04F1 /* MISTDebug.h in Headers */,
+				1EEE54B41E514EEB00585DF8 /* MSTDebugDefine.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		1E2C92651E35F71E00AE04F1 /* MISTDebug */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1E2C926E1E35F71E00AE04F1 /* Build configuration list for PBXNativeTarget "MISTDebug" */;
+			buildPhases = (
+				B7E21D8910FD06D3AE5D403B /* [CP] Check Pods Manifest.lock */,
+				1E2C92611E35F71E00AE04F1 /* Sources */,
+				1E2C92621E35F71E00AE04F1 /* Frameworks */,
+				1E2C92631E35F71E00AE04F1 /* Headers */,
+				1E2C92641E35F71E00AE04F1 /* Resources */,
+				3D8B3F3EC8B652AD574CF596 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MISTDebug;
+			productName = MISTDebug;
+			productReference = 1E2C92661E35F71E00AE04F1 /* MISTDebug.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1E2C925D1E35F71E00AE04F1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = Alipay;
+				TargetAttributes = {
+					1E2C92651E35F71E00AE04F1 = {
+						CreatedOnToolsVersion = 8.2;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 1E2C92601E35F71E00AE04F1 /* Build configuration list for PBXProject "MISTDebug" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 1E2C925C1E35F71E00AE04F1;
+			productRefGroup = 1E2C92671E35F71E00AE04F1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1E2C92651E35F71E00AE04F1 /* MISTDebug */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1E2C92641E35F71E00AE04F1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3D8B3F3EC8B652AD574CF596 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MISTDebug/Pods-MISTDebug-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B7E21D8910FD06D3AE5D403B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1E2C92611E35F71E00AE04F1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1EEE54B91E514EEB00585DF8 /* MSTDebugScanView.m in Sources */,
+				1EEE54B31E514EEB00585DF8 /* MSTDebugConnection.m in Sources */,
+				1EEE54B51E514EEB00585DF8 /* MSTDebugDefine.m in Sources */,
+				1EEE54B11E514EEB00585DF8 /* MSTDebugConfig.m in Sources */,
+				1EEE54B71E514EEB00585DF8 /* MSTDebugDownloader.m in Sources */,
+				1EEE54BB1E514EEB00585DF8 /* MSTDebugSocketManager.m in Sources */,
+				1E81A8611E35FBF10057A55D /* MSTDebugger.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1E2C926C1E35F71E00AE04F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		1E2C926D1E35F71E00AE04F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		1E2C926F1E35F71E00AE04F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0C8107CC08F516EF67E7FEFC /* Pods-MISTDebug.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = MISTDebug/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				PRODUCT_BUNDLE_IDENTIFIER = com.alipay.MISTDebug;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		1E2C92701E35F71E00AE04F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E63B504E7653E2167D4CCBC5 /* Pods-MISTDebug.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = MISTDebug/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				PRODUCT_BUNDLE_IDENTIFIER = com.alipay.MISTDebug;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1E2C92601E35F71E00AE04F1 /* Build configuration list for PBXProject "MISTDebug" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1E2C926C1E35F71E00AE04F1 /* Debug */,
+				1E2C926D1E35F71E00AE04F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1E2C926E1E35F71E00AE04F1 /* Build configuration list for PBXNativeTarget "MISTDebug" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1E2C926F1E35F71E00AE04F1 /* Debug */,
+				1E2C92701E35F71E00AE04F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1E2C925D1E35F71E00AE04F1 /* Project object */;
+}
