@@ -13,10 +13,13 @@ FOUNDATION_EXPORT NSString *const MISTDebugConfigDidChangedNotification;
 @interface MSTDebugConfig : NSObject
 
 @property (nonatomic, assign) BOOL localTemplateMode;
-@property (nonatomic, copy) NSString *localIP;
-@property (nonatomic, copy) NSString *localPort;
+@property (nonatomic, copy) NSString *serverIP;
+@property (nonatomic, copy) NSString *serverPort;
 @property (nonatomic, copy) NSString *socketPort;
 
 + (instancetype)sharedConfig;
+
+//for MSTDebugger use
+- (void)updateServerPort:(UInt16)serverPort;
 
 @end

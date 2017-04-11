@@ -81,8 +81,8 @@ NSString *const MISTDebugConfigDidChangedNotification = @"MISTDebugConfigDidChan
     self = [super init];
     if (self) {
         FBTweakBind(self, localTemplateMode, kTweakId, @"MIST", @"本地模板", YES);
-        FBTweakBind(self, localIP, kTweakId, @"MIST", @"调试服务器IP", @"127.0.0.1");
-        FBTweakBind(self, localPort, kTweakId, @"MIST", @"调试服务器Port", @"10001");
+        FBTweakBind(self, serverIP, kTweakId, @"MIST", @"调试服务器IP", @"127.0.0.1");
+        FBTweakBind(self, serverPort, kTweakId, @"MIST", @"调试服务器Port", @"10001");
         FBTweakBind(self, socketPort, kTweakId, @"MIST", @"Socket Port", @"");
         
         [MSTDebugScanView sharedView].delegate = self;
@@ -128,7 +128,19 @@ NSString *const MISTDebugConfigDidChangedNotification = @"MISTDebugConfigDidChan
     [collection tweakWithIdentifier:@"FBTweak:MIST-DEBUG-MIST-Socket Port"].currentValue = config[@"wsport"]?:@"";
     [self reloadTweakView];
     
-    [[MSTDebugSocketManager manager] connectToHost:self.localIP port:self.socketPort];
+    [[MSTDebugSocketManager manager] connectToHost:self.serverIP port:self.socketPort];
 }
 
+#pragma mark - Public
+
+- (void)updateServerPort:(UInt16)serverPort {
+    if (!serverPort) {
+        return;
+    }
+    
+    FBTweakCategory *category = [[FBTweakStore sharedInstance] tweakCategoryWithName:kTweakId];
+    FBTweakCollection *collection = [category tweakCollectionWithName:@"MIST"];
+    [collection tweakWithIdentifier:@"FBTweak:MIST-DEBUG-MIST-调试服务器Port"].currentValue = [NSString stringWithFormat:@"%d", serverPort];
+    [self reloadTweakView];
+}
 @end

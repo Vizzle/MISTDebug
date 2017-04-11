@@ -22,7 +22,7 @@
     dispatch_once(&onceToken, ^{
         _httpServer = [[HTTPServer alloc] init];
         [_httpServer setConnectionClass:[MSTDebugConnection class]];
-        [_httpServer setPort:10002];
+        [_httpServer setPort:[MSTDebugger defaultDebugger].clientPort];
         [_httpServer setDocumentRoot:docPath];
     });
     

@@ -92,7 +92,7 @@ static void downloadTemplates(id self, SEL _cmd, NSArray* tplIds, void(^completi
 }
 
 - (void)downloadTemplate:(NSString *)templateId completion:(void(^)(NSDictionary *))completion {
-    NSString *baseURL = [NSString stringWithFormat:@"http://%@:10001", [MSTDebugConfig sharedConfig].localIP];
+    NSString *baseURL = [NSString stringWithFormat:@"http://%@:%@", [MSTDebugConfig sharedConfig].serverIP, [MSTDebugConfig sharedConfig].serverPort];
     NSString *URL = [NSString stringWithFormat:@"%@/%@.mist#t=%lf", baseURL, templateId, [[NSDate date] timeIntervalSince1970]];
     NSURLSessionDataTask *task = [self.session dataTaskWithURL:[NSURL URLWithString:URL] completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         NSDictionary *result = nil;

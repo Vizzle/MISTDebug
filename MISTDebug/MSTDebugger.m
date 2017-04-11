@@ -19,6 +19,8 @@ NSString *const MISTDebugShouldReloadNotification = @"MISTDebugShouldReload";
 
 @implementation MSTDebugger
 
+@synthesize serverPort = _serverPort;
+
 + (instancetype)defaultDebugger {
     static MSTDebugger *_defaultDebugger = nil;
     static dispatch_once_t onceToken;
@@ -82,6 +84,22 @@ NSString *const MISTDebugShouldReloadNotification = @"MISTDebugShouldReload";
     [MSTDebugConfig sharedConfig];
     [MSTDebugConnection startServer];
     [[MSTDebugDownloader sharedInstance] startWithDownloader:downloaderClass];
+}
+
+# pragma mark - Getter
+
+- (UInt16)clientPort {
+    return _clientPort ?: 10002;
+}
+
+//- (UInt16)serverPort {
+//    return _serverPort ?: 10001;
+//}
+
+- (void)setServerPort:(UInt16)serverPort {
+    _serverPort = serverPort;
+    
+    [[MSTDebugConfig sharedConfig] updateServerPort:serverPort];
 }
 
 @end
