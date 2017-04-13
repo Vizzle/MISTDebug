@@ -64,7 +64,7 @@
         maskView.backgroundColor = [UIColor clearColor];
         [self addSubview:maskView];
         
-        _tip = [[UILabel alloc] initWithFrame:CGRectMake(15, 88, self.frame.size.height-30, 32)];
+        _tip = [[UILabel alloc] initWithFrame:CGRectMake(15, 88, self.frame.size.width-50, 32)];
         _tip.adjustsFontSizeToFitWidth = YES;
         _tip.backgroundColor = [UIColor colorWithWhite:0.15 alpha:0.64];
         _tip.textAlignment = NSTextAlignmentCenter;
