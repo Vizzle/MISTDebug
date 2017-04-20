@@ -1,5 +1,8 @@
 language: objective-c
-xcode_workspace: MISTDebug.xcworkspace
-xcode_scheme: MISTDebug
-osx_image: xcode7.3
-xcode_sdk: iphonesimulator
+osx_image: xcode8.3
+cache: cocoapods
+branches:
+  only:
+  - master
+script: "xcodebuild -workspace MISTDebug.xcworkspace -scheme MISTDebug -sdk iphonesimulator"
+
