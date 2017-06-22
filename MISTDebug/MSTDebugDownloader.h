@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+typedef void(^MSTDownloadResult)(NSDictionary<NSString *, NSString *> *);
+
 @interface MSTDebugDownloader : NSObject
 
 + (instancetype)sharedInstance;
@@ -15,9 +17,9 @@
 - (void)startWithDownloader:(Class)downloaderClass;
 
 - (void)downloadTemplates:(NSArray* )tplIds
-               completion:(void(^)(NSDictionary<NSString *, NSDictionary *> *)) completion
+               completion:(MSTDownloadResult)completion
                   options:(NSDictionary* )opt;
 
-- (void)downloadTemplate:(NSString *)templateId completion:(void(^)(NSDictionary *))completion;
+- (void)downloadTemplate:(NSString *)templateId completion:(void(^)(NSString *))completion;
 
 @end

@@ -7,19 +7,12 @@
 //
 
 #import "MSTDebugDownloader.h"
-//#import "VZMistTemplateManager.h"
 #import "MSTDebugConfig.h"
 #import <objc/runtime.h>
 #import "MSTDebugDefine.h"
 #import <UIKit/UIKit.h>
 
-@interface VZMistTemplate : NSObject
-
-- (instancetype)initWithTemplateId:(NSString *)tplId content:(NSDictionary *)content;
-
-@end
-
-static void downloadTemplates(id self, SEL _cmd, NSArray* tplIds, void(^completion)(NSDictionary<NSString *, VZMistTemplate *> *), NSDictionary *options) {
+static void downloadTemplates(id self, SEL _cmd, NSArray* tplIds, MSTDownloadResult completion, NSDictionary *options) {
     [[MSTDebugDownloader sharedInstance] downloadTemplates:tplIds completion:completion options:options];
 }
 
@@ -57,18 +50,17 @@ static void downloadTemplates(id self, SEL _cmd, NSArray* tplIds, void(^completi
 }
 
 - (void)downloadTemplates:(NSArray* )tplIds
-               completion:(void(^)(NSDictionary<NSString *, NSDictionary *> *)) completion
+               completion:(MSTDownloadResult)completion
                   options:(NSDictionary* )opt {
     __block NSMutableDictionary *results = [NSMutableDictionary dictionary];
     __block NSInteger count = 0;
     __block NSMutableArray *failedTemplates = [NSMutableArray array];
     for (NSString *tplId in tplIds) {
-        [self downloadTemplate:tplId completion:^(NSDictionary *result) {
+        [self downloadTemplate:tplId completion:^(NSString *result) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 ++count;
                 if (result) {
-                    VZMistTemplate *template = [[VZMistTemplate alloc] initWithTemplateId:tplId content:result];
-                    [results setValue:template forKey:tplId];
+                    results[tplId] = result;
                 } else {
                     [failedTemplates addObject:tplId];
                 }
@@ -91,13 +83,13 @@ static void downloadTemplates(id self, SEL _cmd, NSArray* tplIds, void(^completi
     }
 }
 
-- (void)downloadTemplate:(NSString *)templateId completion:(void(^)(NSDictionary *))completion {
+- (void)downloadTemplate:(NSString *)templateId completion:(void(^)(NSString *))completion {
     NSString *baseURL = [NSString stringWithFormat:@"http://%@:%@", [MSTDebugConfig sharedConfig].serverIP, [MSTDebugConfig sharedConfig].serverPort];
     NSString *URL = [NSString stringWithFormat:@"%@/%@.mist#t=%lf", baseURL, templateId, [[NSDate date] timeIntervalSince1970]];
     NSURLSessionDataTask *task = [self.session dataTaskWithURL:[NSURL URLWithString:URL] completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-        NSDictionary *result = nil;
+        NSString *result = nil;
         if (!error && data) {
-            result = [NSJSONSerialization JSONObjectWithData:data options:0 error:NULL];
+            result = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
         }
         if (completion) {
             completion(result);
