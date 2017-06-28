@@ -13,13 +13,27 @@
 #import <UIKit/UIKit.h>
 
 static void downloadTemplates(id self, SEL _cmd, NSArray* tplIds, MSTDownloadResult completion, NSDictionary *options) {
+    if (![MSTDebugConfig sharedConfig].localTemplateMode) {
+        // Orignal method
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wundeclared-selector"
+        SEL selector = @selector(mst_downloadTemplates:completion:options:);
+#pragma clang diagnostic pop
+        NSMethodSignature *methodSignature = [self methodSignatureForSelector:selector];
+        NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:methodSignature];
+        invocation.selector = selector;
+        [invocation setArgument:&tplIds atIndex:2];
+        [invocation setArgument:&completion atIndex:3];
+        [invocation setArgument:&options atIndex:4];
+        [invocation invokeWithTarget:self];
+        return;
+    }
     [[MSTDebugDownloader sharedInstance] downloadTemplates:tplIds completion:completion options:options];
 }
 
 @interface MSTDebugDownloader ()
 
 @property (nonatomic, strong) NSURLSession *session;
-@property (nonatomic, weak) Class downloaderClass;
 
 @end
 
@@ -41,10 +55,6 @@ static void downloadTemplates(id self, SEL _cmd, NSArray* tplIds, MSTDownloadRes
 - (instancetype)init {
     self = [super init];
     if (self) {
-        [[NSNotificationCenter defaultCenter] addObserver:self
-                                                 selector:@selector(configDidChanged:)
-                                                     name:MISTDebugConfigDidChangedNotification
-                                                   object:nil];
     }
     return self;
 }
@@ -105,8 +115,6 @@ static void downloadTemplates(id self, SEL _cmd, NSArray* tplIds, MSTDownloadRes
     return _session;
 }
 
-static IMP originalImp = NULL;
-
 - (void)startWithDownloader:(Class)downloaderClass {
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wundeclared-selector"
@@ -114,42 +122,20 @@ static IMP originalImp = NULL;
 #pragma clang diagnostic pop
         return;
     }
-    self.downloaderClass = downloaderClass;
-    if ([MSTDebugConfig sharedConfig].localTemplateMode) {
-        [self startIntercept];
-    }
-}
-
-- (void)startIntercept {
+    
+    // Add category method
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wundeclared-selector"
-    Method method = class_getInstanceMethod(self.downloaderClass, @selector(downloadTemplates:completion:options:));
+        Method originalMethod = class_getInstanceMethod(downloaderClass, @selector(downloadTemplates:completion:options:));
+        struct objc_method_description *methodDescription = method_getDescription(originalMethod);
+        SEL swizzledSel = @selector(mst_downloadTemplates:completion:options:);
+        class_addMethod(downloaderClass, swizzledSel, (IMP)downloadTemplates, methodDescription->types);
+        Method swizzledMethod = class_getInstanceMethod(downloaderClass, swizzledSel);
+        method_exchangeImplementations(originalMethod, swizzledMethod);
 #pragma clang diagnostic pop
-    IMP imp = method_getImplementation(method);
-    if (!originalImp) {
-        originalImp = imp;
-    }
-    if (imp != (IMP)downloadTemplates) {
-        method_setImplementation(method, (IMP)downloadTemplates);
-    }
-}
-
-- (void)stopIntercept {
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wundeclared-selector"
-    Method method = class_getInstanceMethod(_downloaderClass, @selector(downloadTemplates:completion:options:));
-#pragma clang diagnostic pop
-    if (originalImp) {
-        method_setImplementation(method, originalImp);
-    }
-}
-
-- (void)configDidChanged:(NSNotification *)notification {
-    if ([MSTDebugConfig sharedConfig].localTemplateMode) {
-        [self startIntercept];
-    } else {
-        [self stopIntercept];
-    }
+    });
 }
 
 @end
