@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'MISTDebug'
-  s.version          = '0.2.1'
+  s.version          = '1.0.0'
   s.summary          = 'A framework for debugging MIST.'
   s.description      = <<-DESC
                        A framework for debugging MIST.
