@@ -80,7 +80,7 @@ NSString *const MISTDebugConfigDidChangedNotification = @"MISTDebugConfigDidChan
 - (instancetype)init {
     self = [super init];
     if (self) {
-        FBTweakBind(self, localTemplateMode, kTweakId, @"MIST", @"本地模板", YES);
+        FBTweakBind(self, localTemplateMode, kTweakId, @"MIST", @"本地模板", NO);
         FBTweakBind(self, serverIP, kTweakId, @"MIST", @"调试服务器IP", @"127.0.0.1");
         FBTweakBind(self, serverPort, kTweakId, @"MIST", @"调试服务器Port", @"10001");
         FBTweakBind(self, socketPort, kTweakId, @"MIST", @"Socket Port", @"");
